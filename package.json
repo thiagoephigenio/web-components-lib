@@ -1,0 +1,38 @@
+{
+  "name": "web-components-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "type": "module",
+  "files": ["dist/*"],
+  "scripts": {
+    "build:types": "tsc",
+    "clean": "rm -rf dist/*",
+    "build:js": "node esbuild.config.js",
+    "build": "npm run clean && npm run build:types && npm run build:js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "@types/react": "^18.3.3",
+    "esbuild": "^0.21.5",
+    "esbuild-plugin-d.ts": "^1.2.3",
+    "typescript": "^5.5.2"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  }
+}
